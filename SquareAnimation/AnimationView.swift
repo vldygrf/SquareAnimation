@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class AnimationView: UIView {
-    var squareSize: CGFloat = 0.0 {
+    var squareLength: CGFloat = 0.0 {
         didSet {
-            widthSquareConstraint.constant = squareSize
-            heightSquareConstraint.constant = squareSize
+            widthSquareConstraint.constant = squareLength
+            heightSquareConstraint.constant = squareLength
         }
     }
     private let squareView = UIView()

@@ -9,8 +9,8 @@ import UIKit
 
 class AnimationViewController: UIViewController {
     private enum Settings {
-        static let squareSize: CGFloat = 100
-        static let squareSizeMultiplier: CGFloat = 2.0
+        static let squareLength: CGFloat = 100
+        static let squareLengthMultiplier: CGFloat = 2.0
         static let animationDuration: TimeInterval = 3.0
         static let animationCurve: UIView.AnimationCurve = .easeInOut
     }
@@ -26,13 +26,13 @@ class AnimationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view().squareSize = Settings.squareSize
+        view().squareLength = Settings.squareLength
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        view().squareSize *= Settings.squareSizeMultiplier
+        view().squareLength *= Settings.squareLengthMultiplier
         let animator = UIViewPropertyAnimator(duration: Settings.animationDuration, curve: Settings.animationCurve, animations: {
             self.view().layoutIfNeeded()
         })
